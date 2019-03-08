@@ -18,13 +18,31 @@ const socketIO  = require('socket.io')(server);
 //-----------------------------------
 
 //routes
-app.get('/color', function(req,res) {
-    res.sendFile(__dirname + '/public/color.html');
+app.get('/comp', function(req,res) {
+    res.sendFile(__dirname + '/public/comp.html');
 });
 
-app.get('/controller', function(req,res) {
-    res.sendFile(__dirname + '/public/controller.html');
+app.get('/collab', function(req,res) {
+    res.sendFile(__dirname + '/public/callab.html');
 });
+
+//sub routes
+app.get('/comp_p', function(req,res) {
+    res.sendFile(__dirname + '/public/comp_p.html');
+});
+
+app.get('/comp_d', function(req,res) {
+    res.sendFile(__dirname + '/public/comp_d.html');
+});
+
+app.get('/collab_p', function(req,res) {
+    res.sendFile(__dirname + '/public/collab_p.html');
+});
+
+app.get('/collab_d', function(req,res) {
+    res.sendFile(__dirname + '/public/collab_d.html');
+});
+
 
 //websocket stuff
 socketIO.on('connection', function(socket) {
@@ -37,20 +55,6 @@ socketIO.on('connection', function(socket) {
     //custom events
     //socket = one client
     //socketIO.sockets = all clients
-    socket.on('red', function(data) {
-        console.log('red event heard');
-        socketIO.sockets.emit('color_change', {r:255, g:0, b:0});
-    });
-
-    socket.on('green', function(data) {
-        console.log('green event heard');
-        socketIO.sockets.emit('color_change', {r:0, g:255, b:0});
-    });
-
-    socket.on('blue', function(data) {
-        console.log('blue event heard');
-        socketIO.sockets.emit('color_change', {r:0, g:0, b:255});
-    });
 
     socket.on('SpwnObj', function(data) {
         console.log('SpwnObj event heard');
