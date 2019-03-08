@@ -2,152 +2,42 @@
 <html>
 <!-- control+alt+i opens dope editor in real time -->
 <head>
-     <title>Multi User Interaction</title>
-     <script src ="/js/aframe-v0.8.2.min.js"></script>
+        <title>A-Frame Matta</title>
+        <meta name="description" content="Jonah - Amanda">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--         <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+     -->
+        <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
+        <script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    
      
-     <!-- <script src="js/aframe-teleport-controls.min.js"></script> -->
-     <script src="/socket.io/socket.io.js"></script>
-     <script>
-        let socket = io();
-
-        //default connect event
-        socket.on('connect', function() {
-            console.log("connected!");
-        });
-        
-        //spawining an object
-        socket.on('Spawn_Object', function(data) {
-            //make the object visible
-            // sdlfjal;sdjf  sadfjksd-->
-            let scene = document.querySelector('a-scene');
-
-            let entity = document.createElement('a-entity');
-                entity.setAttribute('position', {x:0,y:0,z:0});
-                entity.setAttribute('obj-model', 'obj: #Axe_1-obj');
-                entity.setAttribute('material', 'mtl: #Axe_1-mtl');
-                entity.setAttribute('scale', '0.2, 0.2, 0.2,');
-                
-
-                scene.appendChild(entity);
-
-            //create rgb color string for css
-            let confirmationStr = 'boolean: ' + data.b + '.';
-            console.log("boolean received: " + confirmationStr);
-        });
-     </script>
     
-</head>
-<body>
+      </head>  
+      <body>
+        <a-scene gridhelper="size: 5; divisions: 50; colorGrid: fuchsia">
+          <a-assets>
+            <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
+            <img id="sky" src="/assets/textures/SynthSet.png" crossorigin="anonymous" />
+          </a-assets>
+
+          <a-camera id="camera" whereami></a-camera>
+              
+          
+          <a-entity position="0 0 0"
+            geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+            material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
     
-    <a-scene shadow="type: pcfbasic" stats physcics="friction: 0.2; gravity: -9.8; workerFps: 60; debug: true;">
-
-        <a-assets>
-            <img id="skymap" src="/assets/textures/SynthSet.png"> 
-            <img id="tree_2-mat" src="/assets/textures/IceCreme_tree.png">  
-            <img id="popcornGreen" src="/assets/textures/Popcorn_green.png"> 
-
-            <!-- <a-asset-item id="leftController" src="/assets/models/left_hand.obj"></a-asset-item> -->
-            <a-asset-item id="leftController" src="/assets/models/oculus-touch-controller-left.obj"></a-asset-item>
-            <!-- <a-asset-item id="rightController" src="/assets/models/right_hand.obj"></a-asset-item> -->
-            <a-asset-item id="rightController" src="/assets/models/oculus-touch-controller-right.obj"></a-asset-item>
-            <!-- <a-asset-item id="rightController-mat" src="/assets/textures/right_hand.mtl"></a-asset-item>
-            <a-asset-item id="leftController-mat" src="/assets/textures/left_hand.mtl"></a-asset-item> -->
-            <a-asset-item id="rightController-mat" src="/assets/textures/oculus-touch-controller-right.mtl"></a-asset-item>
-            <a-asset-item id="leftController-mat" src="/assets/textures/oculus-touch-controller-left.mtl"></a-asset-item>
-            
-            <a-asset-item id="tree_1-obj" src="/assets/models/poptree.obj"></a-asset-item>
-            <a-asset-item id="water-obj" src="/assets/models/plue.obj"></a-asset-item>
-            <a-asset-item id="tree_1-mat" src="/assets/textures/tree_1_1.mtl"></a-asset-item>
-            <a-asset-item id="tree_2-obj" src="/assets/models/IceCreme_tree.obj"></a-asset-item>
-            <!-- <a-asset-item id="tree_2-mat" src="/assets/textures/IceCreme_tree.png"></a-asset-item> -->
-            <a-asset-item id="tree_3-obj" src="/assets/models/tree_2_2.obj"></a-asset-item>
-            <a-asset-item id="tree_3-mat" src="/assets/textures/tree_2_2.mtl"></a-asset-item>
-            <a-asset-item id="rock_01-mat" src="/assets/textures/rock_01.mtl"></a-asset-item>
-            <a-asset-item id="rock_01-obj" src="/assets/models/rock_01.obj"></a-asset-item>
-
-            <!-- adding our own models -->
-            <a-asset-item id="Axe_1-obj" src="/assets/models/Axe_1.obj"></a-asset-item>
-            <a-asset-item id="Axe_1-mtl" src="/assets/textures/Axe_1.mtl"></a-asset-item>
-
-        </a-assets>
-        <!-- <a-entity id="rock" obj-model="obj:#rock_01-obj" material="#rock_01-mat" shadow="cast: true" shadow="receive: true" position="10 2.3 0" ></a-entity>
-        <a-entity id="tree" obj-model="obj: #tree_1-obj; mtl: #tree_1-mat;" shadow="cast: true" shadow="receive: true" position=" 0 0 10" ></a-entity>
-         -->
-        <!-- <a-entity id="test" obj-model="obj: #water-obj"  material="color: green" rotation="0 0 0" scale="1000 1000 1000"></a-entity> -->
-        <a-entity id="terrainGenerationObj" mesh-smooth static-body="shape: hull;" genterra-component genwater-component position="0 0 0"></a-entity>
-        <a-entity id="sky"
-                geometry="primitive:sphere; radius:500"
-                material="shader:flat; src:#skymap; side:back">
-        </a-entity>
-        
-        <!-- Lights< -->
-        <a-entity id="Light SUN" light="type:directional; 
-        castShadow:true;
-        color:#e0d498; 
-        intensity:1.2; 
-        shadowCameraLeft: -250;
-        shadowCameraBottom: -250;
-        shadowCameraRight: 250;
-        shadowCameraTop: 250;
-        shadowMapHeight: 512;
-        shadowMapWidth: 512;" 
-        scale="10 10 10" position="40 40 20"></a-entity>
-        <!-- shadowCameraVisible: true; -->
-
-        <a-entity id="LightBounce1 Side" light="type:directional; color:#e0d498; intensity:0.1;"
-        scale="10 10 10" position="-40 0 -20" rotation="180 0 0"></a-entity>
-
-        <a-entity id="LightBounce1 Side2" light="type:directional; color:#e0d498; intensity:0.1;"
-        scale="10 10 10" position="40 0 20" rotation="180 0 0"></a-entity>
-
-        <a-entity id="LightBounce2 Bottom" light="type:directional; color:#e0d498; intensity:0.1;"
-        scale="10 10 10" position="0 -0.025 0" rotation="90 0 0"></a-entity>
-
-        <a-entity light="type: ambient;  color:#e0d498;  intensity:0.5;"></a-entity>
-        <!-- Lights> -->
-
-        <!-- <a-entity id="Player" collider-check position="0 10 0" raycaster="objects: .collidable" runtime> -->
-            <!-- <a-entity   cursor="fuse:true; fuseTimeout:500; rayOrigin:mouse;"></a-entity> -->
-            <!-- <a-entity 
-            
-            obj-model="obj:#leftController"
-            material="mtl:#leftController-mat"
-            teleport-controls="type: parabolic; landingMaxAngle: 80"
-            model="false"
-            
-            ></a-entity> 
-            
-            <a-entity
-            id="rightHand" 
-            
-            obj-model="obj:#rightController"
-            material="mtl:#rightController-mat"
-            teleport-controls="type: parabolic; landingMaxAngle: 80"
-           
-            
-            ></a-entity> -->
-            <!-- <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #Camera;"></a-entity>
-            <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #Camera;"></a-entity>
-            <a-camera id="Camera"></a-camera> -->
-        <!-- </a-entity> -->
-        <!-- triggerdown-listener -->
-        <!-- oculus-touch-controls="hand: right; model:true;" -->
-
-
-        <a-entity id="cameraRig" position="0 0 0">
-            <!-- camera -->
-            <a-entity id="head" camera wasd-controls look-controls></a-entity>
-            <!-- hand controls -->
-            <a-entity id="left-hand" dynamic-body="shape: box;" oculus-touch-controls="hand: left"></a-entity>
-            <a-entity id="right-hand" static-body="shape: box;" oculus-touch-controls="hand: right"></a-entity>
-          </a-entity>
-
-
-        <a-entity id="axe" position="0,0,0" scale="0.2,0.2,0.2" geometry="#Axe_1-obj" material="#Axe_1-mtl"></a-entity>
-
-    </a-scene>
- 
-
-</body>
+          <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+          <a-entity light="color: #ffaaff; intensity: 1.5" position="0 5 -5"></a-entity>
+    
+          <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+          <a-entity id="particles" particle-system="preset: snow"></a-entity>
+    
+        </a-scene>
+      </body>
 
 </html>
