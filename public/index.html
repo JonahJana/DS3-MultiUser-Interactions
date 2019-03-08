@@ -16,21 +16,24 @@
     
      
     
-      </head>  
+</head>  
       <body>
         <a-scene gridhelper="size: 5; divisions: 50; colorGrid: fuchsia">
           <a-assets>
+            <audio id="background" crossorigin="anonymous" src="/assets/sounds/Red_Ant.mp3"></audio>
+
             <img id="grid" src="/assets/textures/25P1geh.png" crossorigin="anonymous">
             <img id="boxes" src="/assets/textures/25P1geh.jpg" crossorigin="anonymous">
             <img id="sky" src="/assets/textures/SynthSet.png" crossorigin="anonymous" />
+
           </a-assets>
 
           <a-camera id="camera" whereami>
-                <a-entity   cursor="fuse:true; fuseTimeout:500;  rayOrigin:mouse;"
-                     >
-                </a-entity>
+                <a-entity   cursor="fuse:true; fuseTimeout:500; rayOrigin:mouse;"></a-entity>
           </a-camera>
           
+          
+
           <!-- box -->
           <a-entity position="3 3 -5"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
@@ -63,9 +66,11 @@
           "remove-component" ></a-entity>
 
 
-          
+          <a-entity sound="src: #background; autoplay: true"></a-entity>
           
           <!-- end -->
+
+          
 
           <a-entity position="0 0 0"
             geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
@@ -78,6 +83,9 @@
           <a-sky src="#sky" rotation="0 -90 0"></a-sky>
           <a-entity id="particles" particle-system="preset: snow"></a-entity>
     
+
+          
+          
         </a-scene>
       </body>
 
