@@ -20,19 +20,25 @@
       <body>
         <a-scene gridhelper="size: 5; divisions: 50; colorGrid: fuchsia">
           <a-assets>
-            <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
+            <img id="grid" src="/assets/textures/25P1geh.png" crossorigin="anonymous">
+            <img id="boxes" src="/assets/textures/25P1geh.jpg" crossorigin="anonymous">
             <img id="sky" src="/assets/textures/SynthSet.png" crossorigin="anonymous" />
           </a-assets>
 
           <a-camera id="camera" whereami></a-camera>
-              
+          
+          
+          <!-- box -->
+          <a-entity position="0 5 5"
+          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="0 0 0"
+          material="src: #boxes; repeat: 2 2 2; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
           
           <a-entity position="0 0 0"
             geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
             material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
     
           <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-          <a-entity light="color: #ffaaff; intensity: 1.5" position="0 5 -5"></a-entity>
+          <a-entity light="color: #fdfaaff; intensity: 1.5" position="0 5 -5"></a-entity>
     
           <a-sky src="#sky" rotation="0 -90 0"></a-sky>
           <a-entity id="particles" particle-system="preset: snow"></a-entity>

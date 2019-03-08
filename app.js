@@ -16,6 +16,12 @@ const socketIO  = require('socket.io')(server);
 })
 
 //-----------------------------------
+//test scripts
+app.get('/test', function(req,res) {
+    res.sendFile(__dirname + '/public/test.html');
+});
+
+
 
 //routes
 app.get('/comp', function(req,res) {
