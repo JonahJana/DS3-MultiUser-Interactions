@@ -1,0 +1,19 @@
+{
+  "name": "ds3-multiuser-interactions",
+  "version": "1.0.0",
+  "description": "MultiUser Interaction Program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonahJana/DS3-MultiUser-Interactions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonahJana/DS3-MultiUser-Interactions/issues"
+  },
+  "homepage": "https://github.com/JonahJana/DS3-MultiUser-Interactions#readme"
+}
