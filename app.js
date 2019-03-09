@@ -24,12 +24,16 @@ app.get('/test', function(req,res) {
 
 
 //routes
+app.get('/menu', function(req,res) {
+    res.sendFile(__dirname + '/public/menu.html');
+});
+
 app.get('/comp', function(req,res) {
     res.sendFile(__dirname + '/public/comp.html');
 });
 
 app.get('/collab', function(req,res) {
-    res.sendFile(__dirname + '/public/callab.html');
+    res.sendFile(__dirname + '/public/collab.html');
 });
 
 //sub routes
