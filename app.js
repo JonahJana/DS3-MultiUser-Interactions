@@ -29,7 +29,7 @@ app.get('/comp', function(req,res) {
 });
 
 app.get('/collab', function(req,res) {
-    res.sendFile(__dirname + '/public/callab.html');
+    res.sendFile(__dirname + '/public/collab.html');
 });
 
 //sub routes
