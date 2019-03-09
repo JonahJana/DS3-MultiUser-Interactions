@@ -20,7 +20,7 @@
       <body>
         <a-scene gridhelper="size: 5; divisions: 50; colorGrid: fuchsia">
           <a-assets>
-            <audio id="background" crossorigin="anonymous" src="/assets/sounds/Red_Ant.mp3"></audio>
+            <audio id="background" preload="auto" crossorigin="anonymous" src="/assets/sounds/Synth.mp3"></audio>
 
             <img id="grid" src="/assets/textures/25P1geh.png" crossorigin="anonymous">
             <img id="boxes" src="/assets/textures/25P1geh.jpg" crossorigin="anonymous">
@@ -118,7 +118,7 @@
           <a-entity light="color: #fdfaaff; intensity: 1.5" position="0 5 -5"></a-entity>
     
           <a-sky src="#sky" rotation="0 -90 0"></a-sky>
-          <a-entity id="particles" particle-system="preset: snow"></a-entity>
+          <a-entity id="particles" particle-system="preset: dust; particleCount: 5000; maxAge: 10; size: 0.5"></a-entity>
     
 
           
