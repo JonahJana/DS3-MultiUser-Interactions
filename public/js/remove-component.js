@@ -1,3 +1,6 @@
+var counter = 0; 
+var timeoutID;
+
 AFRAME.registerComponent('remove-component', {
     schema: {},
     init : function() {
@@ -9,6 +12,9 @@ AFRAME.registerComponent('remove-component', {
             console.log("click");
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
+            counter++;
+            console.log(counter);
+
         });
     },
     deleteMyself : function() {
@@ -17,3 +23,11 @@ AFRAME.registerComponent('remove-component', {
         //note memmory may stay aroudn until "garbage collected" so consider pooling instead of deleting. See note in create-cow element
     }
 });
+
+function delayedAlert() {
+  timeoutID = window.setTimeout(window.alert, 2000, 'You iz out of time');
+}
+
+function clearAlert() {
+  window.clearTimeout(timeoutID);
+}
