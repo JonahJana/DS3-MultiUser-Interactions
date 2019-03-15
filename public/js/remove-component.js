@@ -13,6 +13,20 @@ AFRAME.registerComponent('remove-component', {
             Context_AF.deleteMyself();
             counter++;
             console.log(counter);
+
+            
+
+            if (counter == 1){
+                Context_AF.initDate = new Date();
+                document.querySelector('#timeTracker').components['time-component'].currentTime = Context_AF.initDate;
+             }
+            if (counter == 14){
+                var currentDate = new Date();
+                var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
+                var finalTime = currentDate - pastDate;
+                
+            }
+
         });
     },
     deleteMyself : function() {
