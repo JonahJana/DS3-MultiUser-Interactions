@@ -15,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/JonahJana/DS3-MultiUser-Interactions/issues"
   },
-  "homepage": "https://github.com/JonahJana/DS3-MultiUser-Interactions#readme"
+  "homepage": "https://github.com/JonahJana/DS3-MultiUser-Interactions#readme",
+  "dependencies": {},
+  "devDependencies": {}
 }

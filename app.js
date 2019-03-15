@@ -21,8 +21,6 @@ app.get('/test', function(req,res) {
     res.sendFile(__dirname + '/public/test.html');
 });
 
-
-
 //routes
 app.get('/menu', function(req,res) {
     res.sendFile(__dirname + '/public/menu.html');
