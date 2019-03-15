@@ -1,8 +1,16 @@
 var counter = 0;
 
+//const express   = require('express');
+//const app       = express();
+//const http      = require('http');
+//const server    = http.createServer(app);
+//const socketIO  = require('socket.io')(server);
+
 AFRAME.registerComponent('remove-component', {
     schema: {},
     init : function() {
+        src="/socket.io/socket.io.js"
+
         const Context_AF = this;
 
         Context_AF.soundElem = document.querySelector('#deleteSound');
@@ -23,6 +31,7 @@ AFRAME.registerComponent('remove-component', {
                 var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
                 var finalTime = currentDate - pastDate;
                 
+                //socketIO.socket.emit(finalTime);
             }
             
         });

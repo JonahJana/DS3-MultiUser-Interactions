@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>score tracker</h1>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            let socket = io();
+
+            //default connect event
+            socket.on('connect', function() {
+                console.log("connected!");
+            });
+
+            socket.on('Get_score', function(data) {
+                //create rgb color string for css
+                
+                console.log("data received: " + data);
+
+            });
+        </script>
+    </body>
+</html>

@@ -64,9 +64,9 @@ socketIO.on('connection', function(socket) {
     //socket = one client
     //socketIO.sockets = all clients
 
-    socket.on('SpwnObj', function(data) {
-        console.log('SpwnObj event heard');
-        socketIO.sockets.emit('Spawn_Object', {b:true});
+    socket.on(finalTime, function(data) {
+        console.log('score event heard');
+        socketIO.sockets.emit('Get_score', {time:data});
     });
 });
 
