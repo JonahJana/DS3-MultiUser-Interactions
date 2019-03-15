@@ -1,3 +1,5 @@
+var counter = 0;
+
 AFRAME.registerComponent('remove-component', {
     schema: {},
     init : function() {
@@ -9,6 +11,8 @@ AFRAME.registerComponent('remove-component', {
             console.log("click");
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
+            counter++;
+            console.log(counter);
         });
     },
     deleteMyself : function() {
