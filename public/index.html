@@ -14,6 +14,7 @@
         
         <script src="js/create-component.js"></script>
         <script src="js/remove-component.js"></script>
+        <script src="js/timeVar.js"></script>
 
     
      
@@ -33,6 +34,12 @@
           <a-entity id="rig" camera="fov: 90" look-controls wasd-controls position="0 2 0" >
             <a-entity cursor="fuse:true; fuseTimeout:500; rayOrigin:mouse;"></a-entity>
           </a-entity>
+
+
+
+          <a-entity id="timeTracker" time-component ></a-entity>
+
+
 
           <!-- box -->
           <a-entity remove-component position="3 3 -5"
