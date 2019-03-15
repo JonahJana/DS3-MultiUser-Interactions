@@ -19,9 +19,12 @@ AFRAME.registerComponent('remove-component', {
             counter++;
             console.log(counter);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of 1115a8f... Merge branch 'master' of https://github.com/JonahJana/DS3-MultiUser-Interactions
+=======
+>>>>>>> parent of 0562821... timer works
         });
     },
     deleteMyself : function() {
