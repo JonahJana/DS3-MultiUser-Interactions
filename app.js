@@ -43,10 +43,6 @@ app.get('/comp_d', function(req,res) {
     res.sendFile(__dirname + '/public/comp_d.html');
 });
 
-app.get('/collab_p', function(req,res) {
-    res.sendFile(__dirname + '/public/collab_p.html');
-});
-
 app.get('/collab_d', function(req,res) {
     res.sendFile(__dirname + '/public/collab_d.html');
 });
