@@ -27,8 +27,9 @@
             <audio id="background" preload="auto" crossorigin="anonymous" src="/assets/sounds/Synth.mp3"></audio>
 
             <img id="grid" src="/assets/textures/25P1geh.png" crossorigin="anonymous">
-            <img id="boxes" src="/assets/textures/25P1geh.jpg" crossorigin="anonymous">
+            <img id="boxes" src="/assets/textures/cube.jpg" crossorigin="anonymous">
             <img id="sky" src="/assets/textures/SynthSet.png" crossorigin="anonymous" />
+            <img id="planes" src="/assets/textures/plane.png" crossorigin="anonymous" />
 
           </a-assets>
 
@@ -36,194 +37,151 @@
             <a-entity cursor="fuse:true; fuseTimeout:500; rayOrigin:mouse;"></a-entity>
           </a-entity>
 
-          <a-entity id="timeTracker" time-component ></a-entity>
+          <a-entity class="not-clickable" id="timeTracker" time-component ></a-entity>
+
 
           <!-- box -->
-          <a-entity remove-component position="3 3 -5"
+          <a-entity class="clickable" remove-component position="3 3 -5"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="2 2 -4"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="2 3 -4"
+          geometry="primitive: box; width: 2; height: 2; depth: 0.25" rotation="0 -10 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
         
 
           
-          <a-entity remove-component position="-3 3 -6"
+          <a-entity class="clickable" remove-component position="-3 3 -6"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
-          <a-entity remove-component position="-2 2 -5"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="-2 2 -5"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
-          <a-entity remove-component position="-1 1 -3"
-          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
-          ></a-entity>
-
-          <a-entity remove-component position="0 0 -2"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
-
-
-
-
-          <a-entity remove-component position="5 1 -3"
-          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
-
-          <a-entity remove-component position="4 0 -2"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
-
-
-
-          <a-entity remove-component position="4 3 2"
+          <a-entity class="clickable" remove-component position="-1 1 -3"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="3 2 1"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="0 0 -2"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
 
-          <a-entity remove-component position="8 5 -1"
+
+          <a-entity class="clickable" remove-component position="4 3 2"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="7 4 0"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="3 2 1"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
 
-          <a-entity remove-component position="-1 4 8"
-          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
-
-          <a-entity remove-component position="0 0 7"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
-
-
-
-
-
-          <a-entity remove-component position="4 1 5"
+          <a-entity class="clickable" remove-component position="8 5 -1"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="3 0 4"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="7 4 0"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
-          <a-entity remove-component position="2 4 6"
+
+
+
+
+          <a-entity class="clickable" remove-component position="4 1 5"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="1 3 5"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="3 0 4"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
-
-          
-          <a-entity remove-component position="-1 1 4"
+          <a-entity class="clickable" remove-component position="2 4 6"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-
-          <a-entity remove-component position="0 0 3"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="1 3 5"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
 
-          <a-entity remove-component position="-8 1 5"
+      
+
+
+
+
+          <a-entity class="clickable" remove-component position="-8 1 5"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           "remove-component" ></a-entity>
 
-          <a-entity remove-component position="-7 0 4"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="-7 0 4"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
           
-          <a-entity remove-component position="-6 5 1"
+          <a-entity class="clickable" remove-component position="-6 5 1"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="-5 4 0"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="-5 4 0"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
 
 
           
-          <a-entity remove-component position="-3 3 -2"
+          <a-entity class="clickable" remove-component position="-3 3 -2"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity remove-component position="-2 2 -1"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          <a-entity class="clickable" remove-component position="-2 2 -1"
+          geometry="primitive: box; width: 2; height: 2; depth: 1" rotation="90 0 0"
+          material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
-
-
-
-          <a-entity remove-component position="-7 1 1"
-          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
-          ></a-entity>
-
-          <a-entity remove-component position="-6 0 0"
-          geometry="primitive: plane; width: 1; height: 1; depth: 1" rotation="90 0 0"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
 
           <!-- end -->
 
@@ -234,8 +192,8 @@
           material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
     
-          <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-          <a-entity light="color: #fdfaaff; intensity: 1.5" position="0 5 -5"></a-entity>
+          <a-entity class="not-clickable" light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+          <a-entity class="not-clickable" light="color: #fdfaaff; intensity: 1.5" position="0 5 -5"></a-entity>
     
           <a-sky class="not-clickable" src="#sky" rotation="0 -90 0"></a-sky>
          <a-entity id="particles" particle-system="preset: dust; particleCount: 5000; maxAge: 10; size: 0.5"></a-entity>

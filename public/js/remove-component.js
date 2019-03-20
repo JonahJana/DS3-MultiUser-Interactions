@@ -26,11 +26,11 @@ AFRAME.registerComponent('remove-component', {
                 Context_AF.initDate = new Date();
                 document.querySelector('#timeTracker').components['time-component'].currentTime = Context_AF.initDate;
              }
-            if (counter == 14){
+            if (counter == 20){
                 var currentDate = new Date();
                 var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
                 var finalTime = currentDate - pastDate;
-                
+                console.log(finalTime)
                 //socketIO.socket.emit(finalTime);
             }
             
