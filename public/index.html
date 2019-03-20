@@ -25,11 +25,23 @@
               window.socketIo = io();
               console.log("hey listen")
             }
-            </script>
+          </script>
      
     
 </head>  
       <body>
+
+          <script>
+
+              socket.on('Get_score', function(data) {
+                //create rgb color string for css
+               
+                console.log("we out here doing shit bois: ");
+     
+             
+               });
+             </script>
+
         <a-scene gridhelper="size: 5; divisions: 50; colorGrid: fuchsia">
           <a-assets>
             <audio id="background" preload="auto" crossorigin="anonymous" src="/assets/sounds/Synth.mp3"></audio>
@@ -215,6 +227,9 @@
           
           
         </a-scene>
+
+
+       
       </body>
 
 </html>
