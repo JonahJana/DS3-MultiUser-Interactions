@@ -68,6 +68,12 @@ socketIO.on('connection', function(socket) {
         console.log('score event heard');
         socketIO.sockets.emit('Get_score', {data});
     });
+
+
+    socket.on('planeDeleted', function(data) {
+        console.log('plane has been deleted');
+        socketIO.sockets.emit('deltePlane', {data});
+    });
 });
 
 
