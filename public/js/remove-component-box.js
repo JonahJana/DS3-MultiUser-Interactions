@@ -23,22 +23,13 @@ AFRAME.registerComponent('remove-component-box', {
             console.log("click");
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
-            counter++;
 
-            if (counter == 1){
-                Context_AF.initDate = new Date();
-                document.querySelector('#timeTracker').components['time-component'].currentTime = Context_AF.initDate;
-             }
-            if (counter == 2){
-                var currentDate = new Date();
-                var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
-                var finalTime = currentDate - pastDate;
-                window.socketIo.emit('boxDeleted');
-                console.log("sent");
-            }
+            window.socketIo.emit('boxDeleted');
+            console.log("sent-p");
             
         });
     },
+    
     deleteMyself : function() {
         const Context_AF = this;
         Context_AF.el.parentNode.removeChild(Context_AF.el); 

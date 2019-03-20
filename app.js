@@ -72,7 +72,12 @@ socketIO.on('connection', function(socket) {
 
     socket.on('planeDeleted', function(data) {
         console.log('plane has been deleted');
-        socketIO.sockets.emit('deltePlane', {data});
+        socketIO.sockets.emit('deletePlane', {data});
+    });
+
+    socket.on('boxDeleted', function(data) {
+        console.log('box has been deleted');
+        socketIO.sockets.emit('deleteBox', {data});
     });
 });
 
