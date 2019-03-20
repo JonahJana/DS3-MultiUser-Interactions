@@ -8,7 +8,7 @@ var counter = 0;
 
 
 
-AFRAME.registerComponent('remove-component-plane', {
+AFRAME.registerComponent('remove-component-box', {
     schema: {},     
     init : function() {
 
@@ -25,9 +25,6 @@ AFRAME.registerComponent('remove-component-plane', {
             Context_AF.deleteMyself();
             counter++;
 
-
-
-
             if (counter == 1){
                 Context_AF.initDate = new Date();
                 document.querySelector('#timeTracker').components['time-component'].currentTime = Context_AF.initDate;
@@ -36,7 +33,7 @@ AFRAME.registerComponent('remove-component-plane', {
                 var currentDate = new Date();
                 var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
                 var finalTime = currentDate - pastDate;
-                window.socketIo.emit('completed');
+                window.socketIo.emit('boxDeleted');
                 console.log("sent");
             }
             
