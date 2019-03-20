@@ -47,6 +47,10 @@ app.get('/collab_d', function(req,res) {
     res.sendFile(__dirname + '/public/collab_d.html');
 });
 
+app.get('/collab_p', function(req,res) {
+    res.sendFile(__dirname + '/public/collab_p.html');
+});
+
 
 //websocket stuff
 socketIO.on('connection', function(socket) {
