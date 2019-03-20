@@ -11,7 +11,8 @@ var counter = 0;
 AFRAME.registerComponent('remove-component', {
     schema: {},     
     init : function() {
-        if(window.socketIO == null){
+
+        if(window.socketIo == null){
             window.socketIo = io();
             console.log("fownl")
         }
@@ -28,11 +29,12 @@ AFRAME.registerComponent('remove-component', {
                 Context_AF.initDate = new Date();
                 document.querySelector('#timeTracker').components['time-component'].currentTime = Context_AF.initDate;
              }
-            if (counter == 20){
+            if (counter == 4){
                 var currentDate = new Date();
                 var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
                 var finalTime = currentDate - pastDate;
-                window.socketIO.socket.emit(finalTime);
+                window.socketIo.emit('completed');
+                console.log("sent");
             }
             
         });
