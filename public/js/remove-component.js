@@ -6,21 +6,23 @@ var counter = 0;
 //const server    = http.createServer(app);
 //const socketIO  = require('socket.io')(server);
 
+
+
 AFRAME.registerComponent('remove-component', {
-    schema: {},
+    schema: {},     
     init : function() {
-        src="/socket.io/socket.io.js"
+        if(window.socketIO == null){
+            window.socketIo = io();
+            console.log("fownl")
+        }
 
         const Context_AF = this;
-
-        Context_AF.soundElem = document.querySelector('#deleteSound');
 
         Context_AF.el.addEventListener('click', function(event) {
             console.log("click");
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
             counter++;
-            console.log(counter);
 
             if (counter == 1){
                 Context_AF.initDate = new Date();
@@ -30,8 +32,7 @@ AFRAME.registerComponent('remove-component', {
                 var currentDate = new Date();
                 var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
                 var finalTime = currentDate - pastDate;
-                console.log(finalTime)
-                //socketIO.socket.emit(finalTime);
+                window.socketIO.socket.emit(finalTime);
             }
             
         });

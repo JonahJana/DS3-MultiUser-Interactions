@@ -60,7 +60,7 @@ socketIO.on('connection', function(socket) {
     //socket = one client
     //socketIO.sockets = all clients
 
-    socket.on(finalTime, function(data) {
+    socket.on('finalTime', function(data) {
         console.log('score event heard');
         socketIO.sockets.emit('Get_score', {time:data});
     });
