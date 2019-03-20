@@ -26,21 +26,31 @@
               console.log("hey listen")
             }
           </script>
+        
+        <script>
+          let socket = io();
+          //default connect event
+        socket.on('connect', function() {
+            console.log("fuk!");
+        });
+
+          socket.on('Get_score', function(data) {
+            //make the object visible
+            // sdlfjal;sdjf  sadfjksd-->
+            let scene = document.querySelector('a-scene');
+
+            let getRidOfObj = document.querySelector('#block1');
+            getRidOfObj.setAttribute('visible', false);
+            
+            console.log("we bois");
+        });
+
+          </script>
      
     
 </head>  
       <body>
 
-          <script>
-
-              socket.on('Get_score', function(data) {
-                //create rgb color string for css
-               
-                console.log("we out here doing shit bois: ");
-     
-             
-               });
-             </script>
 
         <a-scene gridhelper="size: 5; divisions: 50; colorGrid: fuchsia">
           <a-assets>
@@ -84,6 +94,11 @@
           material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
+
+          <a-entity id="block1" class="clickable" remove-component position="1 1 0"
+          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
+          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
+          ></a-entity>
 
 
         <!--
