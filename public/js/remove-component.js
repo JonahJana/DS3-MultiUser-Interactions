@@ -44,8 +44,10 @@ AFRAME.registerComponent('remove-component', {
                     alert("Your final time: " + timeSec + "sec./n");
                     alert("Current Highscore: " + Highscore)
                 }else{
-                    localStorage.getItem("Highscore") = timeSec;
+                    localStorage.Highscore = timeSec;
                     alert("NEW HIGH SCORE: " + timeSec + "sec.");
+
+                    console.log("-" + localStorage.getItem("Highscore") + "-");
                 }
 
                 window.socketIo.emit('completed', finalTime);
