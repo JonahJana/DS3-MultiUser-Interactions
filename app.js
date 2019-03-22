@@ -77,7 +77,7 @@ socketIO.on('connection', function(socket) {
 
     socket.on('boxDeleted', function(data) {
         console.log('box has been deleted');
-        socketIO.sockets.emit('deleteBox', {data});
+        socketIO.sockets.emit('deleteBox', data);
     });
 });
 

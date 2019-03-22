@@ -24,7 +24,7 @@ AFRAME.registerComponent('remove-component-plane', {
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
 
-            window.socketIo.emit('planeDeleted');
+            window.socketIo.emit('planeDeleted', {id:"#block1"});
             console.log("sent-p");
             
         });
