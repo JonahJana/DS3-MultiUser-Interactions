@@ -71,14 +71,13 @@ socketIO.on('connection', function(socket) {
 
 
     socket.on('BBlockDeleted', function(data) {
-        console.log('Blue Block has been deleted' + data.id);
-        
+        console.log('Blue Block has been deleted');
         socketIO.sockets.emit('Blue-Block-Deleted', {data});
     });
 
     socket.on('YBlockDeleted', function(data) {
         console.log('Yellow Block has been deleted');
-        socketIO.sockets.emit('Yellow-Block-Deleted', data);
+        socketIO.sockets.emit('Yellow-Block-Deleted', {data});
     });
 });
 

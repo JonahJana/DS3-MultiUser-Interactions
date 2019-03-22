@@ -38,16 +38,15 @@
               console.log("d-fuk!");
           });
 
-          socket.on('deletePlane', function(data) {
+          socket.on('Yellow-Block-Deleted', function(data) {
               //make the object visible
               // sdlfjal;sdjf  sadfjksd-->
-              console.log("d-----gottem");
+
               let scene = document.querySelector('a-scene');
- 
-              let getRidOfObj = document.querySelector('#' + data.id);
+
+              let getRidOfObj = document.querySelector("#" + data.data.id);
               getRidOfObj.setAttribute('visible', false);
-            
-              console.log("d-----we bois");
+
           });
 
         </script>

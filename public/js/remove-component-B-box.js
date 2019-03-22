@@ -25,11 +25,8 @@ AFRAME.registerComponent('remove-component-b-box', {
             
 
             var block = Context_AF.el.getAttribute('id');
-
-            console.log("ooooooo " + block + " oooooooooo");
             
             window.socketIo.emit('BBlockDeleted', {id:block});
-            console.log(block + "++++++++++++++++++++");
             
             Context_AF.deleteMyself();
         });
