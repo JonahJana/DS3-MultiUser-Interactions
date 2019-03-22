@@ -22,14 +22,15 @@ AFRAME.registerComponent('remove-component-y-box', {
         Context_AF.el.addEventListener('click', function(event) {
             console.log("click");
             //object clicked - lets create a cow!
+
+            var block = Context_AF.el.getAttribute('id');
+
+            console.log("ooooooo " + block + " oooooooooo");
+            
+            window.socketIo.emit('YBlockDeleted', {id:block});
+            console.log(block + "++++++++++++++++++++");
+            
             Context_AF.deleteMyself();
-
-            let block = Context_AF.id
-
-            console.log("click");
-
-            window.socketIo.emit('YBlockDeleted', {id: block});
-            console.log(block + "-----------------------------");
             
         });
     },
