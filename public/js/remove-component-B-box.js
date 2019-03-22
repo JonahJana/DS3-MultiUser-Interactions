@@ -23,7 +23,6 @@ AFRAME.registerComponent('remove-component-b-box', {
             console.log("click");
             //object clicked - lets create a cow!
             
-
             var block = Context_AF.el.getAttribute('id');
             
             window.socketIo.emit('BBlockDeleted', {id:block});

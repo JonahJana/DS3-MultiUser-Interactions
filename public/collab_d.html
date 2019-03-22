@@ -27,7 +27,6 @@
         
             if(window.socketIo == null){
               window.socketIo = io();
-              console.log("hey listen")
             }
           </script>
         
@@ -35,7 +34,6 @@
             let socket = io();
             //default connect event
           socket.on('connect', function() {
-              console.log("d-fuk!");
           });
 
           socket.on('Yellow-Block-Deleted', function(data) {
@@ -49,7 +47,12 @@
 
           });
 
-        </script>
+
+          socket.on('Coop-Complete', function(data) {
+            alert("COMPLETE!");
+          });
+          
+       </script>
      
     
 </head>  
