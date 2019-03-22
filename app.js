@@ -81,10 +81,11 @@ socketIO.on('connection', function(socket) {
     });
     
     socket.on('completedCoop', function(data) {
-        console.log("y")
+        console.log("Completed Coop")
         socketIO.sockets.emit('Coop-Complete');
         
     });
+    
 });
 
 
