@@ -39,10 +39,11 @@
           socket.on('deleteBox', function(data) {
             //make the object visible
             // sdlfjal;sdjf  sadfjksd-->
+            
             console.log("p-----gottem");
             let scene = document.querySelector('a-scene');
 
-            let getRidOfObj = document.querySelector('#block1');
+            let getRidOfObj = document.querySelector(data.id);
             getRidOfObj.setAttribute('visible', false);
             
             console.log("p----we bois");
