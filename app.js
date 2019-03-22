@@ -70,14 +70,14 @@ socketIO.on('connection', function(socket) {
     });
 
 
-    socket.on('planeDeleted', function(data) {
-        console.log('plane has been deleted');
-        socketIO.sockets.emit('deletePlane', {data});
+    socket.on('BBlockDeleted', function(data) {
+        console.log('Blue Block has been deleted');
+        socketIO.sockets.emit('Blue-Block-Deleted', {data});
     });
 
-    socket.on('boxDeleted', function(data) {
-        console.log('box has been deleted');
-        socketIO.sockets.emit('deleteBox', data);
+    socket.on('YBlockDeleted', function(data) {
+        console.log('Yellow Block has been deleted');
+        socketIO.sockets.emit('Yellow-Block-Deleted', data);
     });
 });
 

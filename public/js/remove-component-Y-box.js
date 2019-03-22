@@ -8,7 +8,7 @@ var counter = 0;
 
 
 
-AFRAME.registerComponent('remove-component-box', {
+AFRAME.registerComponent('remove-component-Y-box', {
     schema: {},     
     init : function() {
 
@@ -24,8 +24,10 @@ AFRAME.registerComponent('remove-component-box', {
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
 
-            window.socketIo.emit('boxDeleted');
-            console.log("sent-p");
+            let block = document.activeElement.id
+
+            window.socketIo.emit('YBlockDeleted', {id:"#" + block});
+            console.log(block + "-----------------------------");
             
         });
     },

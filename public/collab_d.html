@@ -15,8 +15,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
         
         <script src="js/create-component.js"></script>
-        <script src="js/remove-component-box.js"></script>
-        <script src="js/remove-component-plane.js"></script>
+
+        <script src="js/remove-component-Y-box.js"></script>
+        <script src="js/remove-component-B-box.js"></script>
+
         <script src="js/timeVar.js"></script>
 
         <script src="/socket.io/socket.io.js"></script>
@@ -74,12 +76,12 @@
 
 
           <!-- box -->
-          <a-entity class="not-clickable" remove-component-box position="3 3 -5"
+          <a-entity class="not-clickable" position="3 3 -5"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
           ></a-entity>
 
-          <a-entity class="clickable" remove-component-plane position="2 3 -4"
+          <a-entity class="clickable" remove-component-B-box position="2 3 -4"
           geometry="primitive: box; width: 2; height: 2; depth: 0.25" rotation="10 -10 -10"
           material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
@@ -87,21 +89,18 @@
 
 
           <!-- box -->
-          <a-entity class="clickable" remove-component-box position="-3 2 -6.5"
+          <a-entity class="not-clickable" position="-3 2 -6.5"
           geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
           material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
-          <a-entity class="not-clickable" position="-2 2 -5"
+          <a-entity class="not-clickable" remove-component-B-box position="-2 2 -5"
           geometry="primitive: box; width: 2; height: 2; depth: 0.25" rotation="0 -10 0"
           material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
           ></a-entity>
 
 
-          <a-entity id="block1" class="clickable" remove-component-box position="1 1 0"
-          geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="50 20 60"
-          material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-          ></a-entity>
+          
 
 
         <!--
