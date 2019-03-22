@@ -8,7 +8,7 @@ var counter = 0;
 
 
 
-AFRAME.registerComponent('remove-component-plane', {
+AFRAME.registerComponent('remove-component-B-box', {
     schema: {},     
     init : function() {
 
@@ -24,8 +24,10 @@ AFRAME.registerComponent('remove-component-plane', {
             //object clicked - lets create a cow!
             Context_AF.deleteMyself();
 
-            window.socketIo.emit('planeDeleted', {id:"#block1"});
-            console.log("sent-p");
+            let block = document.activeElement.id
+
+            window.socketIo.emit('BBlockDeleted', {id:"#" + block});
+            console.log(block + "++++++++++++++++++++");
             
         });
     },
