@@ -24,14 +24,17 @@ AFRAME.registerComponent('remove-component-y-box', {
             //object clicked - lets create a cow!
 
             var block = Context_AF.el.getAttribute('id');
-
-            console.log("ooooooo " + block + " oooooooooo");
             
             window.socketIo.emit('YBlockDeleted', {id:block});
-            console.log(block + "++++++++++++++++++++");
             
             Context_AF.deleteMyself();
             
+            counter++;
+            if (counter == 10){
+                window.socketIo.emit('completedCoop');
+                alert("COMPLETE!");
+
+            }
         });
     },
     

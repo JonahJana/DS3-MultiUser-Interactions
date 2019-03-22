@@ -8,13 +8,12 @@ var counter = 0;
 
 
 
-AFRAME.registerComponent('remove-component-plane', {
+AFRAME.registerComponent('remove-component', {
     schema: {},     
     init : function() {
 
         if(window.socketIo == null){
             window.socketIo = io();
-            console.log("fownl")
         }
 
         const Context_AF = this;
@@ -29,12 +28,28 @@ AFRAME.registerComponent('remove-component-plane', {
                 Context_AF.initDate = new Date();
                 document.querySelector('#timeTracker').components['time-component'].currentTime = Context_AF.initDate;
              }
-            if (counter == 2){
+            if (counter == 10){
                 var currentDate = new Date();
                 var pastDate = document.querySelector('#timeTracker').components['time-component'].currentTime;
                 var finalTime = currentDate - pastDate;
+                var timeSec = finalTime/1000;
+                
+                console.log("-" + localStorage.getItem("Highscore") + "-");
+
+                var Highscore = localStorage.getItem("Highscore");
+
+                console.log("-" + Highscore + "-");
+
+                if(Highscore < timeSec){
+                    alert("Your final time: " + timeSec + "sec./n");
+                    alert("Current Highscore: " + Highscore)
+                }else{
+                    localStorage.getItem("Highscore") = timeSec;
+                    alert("NEW HIGH SCORE: " + timeSec + "sec.");
+                }
+
                 window.socketIo.emit('completed', finalTime);
-                console.log("sent");
+
             }
             
         });

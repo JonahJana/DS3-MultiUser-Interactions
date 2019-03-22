@@ -79,6 +79,13 @@ socketIO.on('connection', function(socket) {
         console.log('Yellow Block has been deleted');
         socketIO.sockets.emit('Yellow-Block-Deleted', {data});
     });
+    
+    socket.on('completedCoop', function(data) {
+        console.log("Completed Coop")
+        socketIO.sockets.emit('Coop-Complete');
+        
+    });
+    
 });
 
 
