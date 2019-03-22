@@ -44,7 +44,7 @@
               console.log("d-----gottem");
               let scene = document.querySelector('a-scene');
  
-              let getRidOfObj = document.querySelector('#block1');
+              let getRidOfObj = document.querySelector('#' + data.id);
               getRidOfObj.setAttribute('visible', false);
             
               console.log("d-----we bois");
@@ -78,25 +78,26 @@
 
 
  <!-- box -->
- <a-entity class="not-clickable" position="3 3 -5"
+ <a-entity id="Yblock1" class="not-clickable" position="3 3 -5"
  geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="0 0 0"
  material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
  ></a-entity>
 
- <a-entity class="clickable" remove-component-b-box position="3 3 -5"
+ <a-entity id="Bblock1" class="clickable" remove-component-b-box position="3 3 -5"
  geometry="primitive: box; width: 1.5; height: 1.5; depth: 1.5" rotation="0 0 0"
  material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
- ></a-entity>
+ >
+</a-entity>
 
 
 
  <!-- box -->
- <a-entity class="not-clickable" position="-3 2 -6.5"
+ <a-entity id="Yblock2" class="not-clickable" position="-3 2 -6.5"
  geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="0 0 0"
  material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
  ></a-entity>
 
- <a-entity class="clickable" remove-component-b-box position="-3 2 -6.5"
+ <a-entity id="Bblock2" class="clickable" remove-component-b-box position="-3 2 -6.5"
  geometry="primitive: box; width: 1.5; height: 1.5; depth: 1.5" rotation="0 0 0"
  material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
  ></a-entity>

@@ -14,23 +14,24 @@ AFRAME.registerComponent('remove-component-b-box', {
 
         if(window.socketIo == null){
             window.socketIo = io();
-            console.log("fownl")
         }
 
         const Context_AF = this;
 
+
         Context_AF.el.addEventListener('click', function(event) {
             console.log("click");
             //object clicked - lets create a cow!
-            Context_AF.deleteMyself();
+            
 
-            var block = this.id;
+            var block = Context_AF.el.getAttribute('id');
 
             console.log("ooooooo " + block + " oooooooooo");
             
-            window.socketIo.emit('BBlockDeleted', {id: block});
+            window.socketIo.emit('BBlockDeleted', {id:block});
             console.log(block + "++++++++++++++++++++");
             
+            Context_AF.deleteMyself();
         });
     },
     deleteMyself : function() {

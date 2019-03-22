@@ -43,10 +43,10 @@
             //make the object visible
             // sdlfjal;sdjf  sadfjksd-->
             
-            console.log(data.id + "===");
+            console.log(data.data.id);
             let scene = document.querySelector('a-scene');
 
-            let getRidOfObj = document.querySelector(data.id);
+            let getRidOfObj = document.querySelector("#" + data.data.id);
             getRidOfObj.setAttribute('visible', false);
             
             console.log("p----we bois");
@@ -79,12 +79,12 @@
 
 
        <!-- box -->
-       <a-entity class="clickable" remove-component-y-box position="3 3 -5"
+       <a-entity id="Yblock1" class="clickable" remove-component-y-box position="3 3 -5"
        geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="0 0 0"
        material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" 
        ></a-entity>
 
-       <a-entity class="not-clickable" position="3 3 -5"
+       <a-entity id="Bblock1" class="not-clickable" position="3 3 -5"
        geometry="primitive: box; width: 1.5; height: 1.5; depth: 1.5" rotation="0 0 0"
        material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
        ></a-entity>
@@ -92,12 +92,12 @@
 
 
        <!-- box -->
-       <a-entity class="clickable" remove-component-y-box position="-3 2 -6.5"
+       <a-entity id="Yblock2" class="clickable" remove-component-y-box position="-3 2 -6.5"
        geometry="primitive: box; width: 1; height: 1; depth: 1" rotation="0 0 0"
        material="src: #boxes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
        ></a-entity>
 
-       <a-entity class="not-clickable" position="-3 2 -6.5"
+       <a-entity id="Bblock2" class="not-clickable" position="-3 2 -6.5"
        geometry="primitive: box; width: 1.5; height: 1.5; depth: 1.5" rotation="0 0 0"
        material="src: #planes; repeat: 1 1 1; transparent: false; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
        ></a-entity>
@@ -227,31 +227,7 @@
 
          -->
 
-        <!-- center box -->
-        <a-entity class="clickable" remove-component position="0 1 -1"
-        geometry="primitive: box; width: 2; height: 0.25; depth: 5" rotation="90 0 0"
-        material="src: #lock; repeat: 1 1 1; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-        ></a-entity>
-
-        <a-entity class="clickable" remove-component position="0 3.7 0"
-        geometry="primitive: box; width: 2; height: 0.25; depth: 2" rotation="180 0 0"
-        material="src: #lock; repeat: 1 1 1; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-        ></a-entity>
-
-        <a-entity class="clickable" remove-component position="0 1 1"
-        geometry="primitive: box; width: 2; height: 0.25; depth: 5" rotation="90 0 0"
-        material="src: #lock; repeat: 1 1 1; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-        ></a-entity>
-
-        <a-entity class="clickable" remove-component position="1 1 0"
-        geometry="primitive: box; width: 2; height: 0.25; depth: 5" rotation="90 90 0"
-        material="src: #lock; repeat: 1 1 1; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-        ></a-entity>
-
-        <a-entity class="clickable" remove-component position="-1 1 0"
-        geometry="primitive: box; width: 2; height: 0.25; depth: 5" rotation="90 90 0"
-        material="src: #lock; repeat: 1 1 1; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-        ></a-entity>
+        
           
 
           <a-entity class="not-clickable" position="0 0 0"

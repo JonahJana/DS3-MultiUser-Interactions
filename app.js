@@ -72,6 +72,7 @@ socketIO.on('connection', function(socket) {
 
     socket.on('BBlockDeleted', function(data) {
         console.log('Blue Block has been deleted' + data.id);
+        
         socketIO.sockets.emit('Blue-Block-Deleted', {data});
     });
 
